@@ -1,6 +1,17 @@
 Ticketee::Application.routes.draw do
 
-  resources :projects
+  resources :projects do
+    resources :tickets
+  end
+
+# this is the route that the above gives  
+# Route
+#                                                         Helper
+# /projects/:project_id/tickets    project_tickets_path
+# /projects/:project_id/tickets/new    new_project_ticket_path
+# /projects/:project_id/tickets/:id/edit    edit_project_ticket_path
+# /projects/:project_id/tickets/:index   project_ticket_path
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
